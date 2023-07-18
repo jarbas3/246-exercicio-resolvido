@@ -12,5 +12,5 @@ alex86 2018-08-27T22:39:52Z
 amanda 2018-08-28T07:42:19Z    
   
 * Execution:  
-Enter file full path: c:\temp\in.txt
+Enter file full path: c:\temp\in.txt  
 Total users: 4  
