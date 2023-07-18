@@ -1,38 +1,37 @@
 package entities;
 
-import java.time.Instant;
+import java.util.Date;
 import java.util.Objects;
 
-public class LogEntry implements Comparable<LogEntry> {
+public class LogEntry {
 
-	private String clientName;
-	private Instant accessTime;
+	private String username;
+	private Date moment;
 	
-	public LogEntry(String clientName, Instant accessTime) {
-		this.clientName = clientName;
-		this.accessTime = accessTime;
+	public LogEntry(String username, Date moment) {
+		this.username = username;
+		this.moment = moment;
 	}
 
-	public String getClientName() {
-		return clientName;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setClientName(String clientName) {
-		this.clientName = clientName;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
-	public Instant getAccessTime() {
-		return accessTime;
+	public Date getMoment() {
+		return moment;
 	}
-	
-	@Override
-	public int compareTo(LogEntry o) {
-		return clientName.compareTo(o.getClientName());
+
+	public void setMoment(Date moment) {
+		this.moment = moment;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(clientName);
+		return Objects.hash(username);
 	}
 
 	@Override
@@ -44,6 +43,6 @@ public class LogEntry implements Comparable<LogEntry> {
 		if (getClass() != obj.getClass())
 			return false;
 		LogEntry other = (LogEntry) obj;
-		return Objects.equals(clientName, other.clientName);
+		return Objects.equals(username, other.username);
 	}
 }
